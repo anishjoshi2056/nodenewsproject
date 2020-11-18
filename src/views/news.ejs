@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <h1>Node news project</h1>
+    <header class="header">
+        <div class="header__logo">Node.js news</div>
+        <div class="header__search">Search</div>
+    </header>
+    <div class="wrapper">
+        <div class="news"> 
+            <% articles.forEach((article)=> { %>
+                <a href="<%-article.url%>" class="news__card">
+                    <img src="<%-article.urlToImage%>" alt="<%-article.author%>">
+                    <h2><%-article.title%></h2>
+                    <p><%-article.description%></p>
+                </a>
+            <%})%>
+        </div>
+    </div>
 </body>
 </html>
