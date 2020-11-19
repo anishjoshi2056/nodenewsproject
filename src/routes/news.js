@@ -1,10 +1,9 @@
 const express = require('express');
 const newsRouter = express.Router();
 const axios = require('axios');
-
 newsRouter.get('', async(req, res)=> {
     try {
-        const newsAPI = await axios.get(`https://newsapi.org/v2/top-headlines?country=in&apiKey=4e5a3ab7b045409dae7e28dfb2d7d942`);
+        const newsAPI = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=4e5a3ab7b045409dae7e28dfb2d7d942`);
         res.render('news', { articles : newsAPI.data.articles})
     } catch (error) {
         if(error.response) {

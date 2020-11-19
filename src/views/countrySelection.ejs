@@ -20,13 +20,11 @@
     </header>
     <div class="wrapper">
         <div class="news"> 
-            <%if(articles !== null) { %>
-                <% articles.forEach((article)=> { %>
-                    <a href="<%-article.url%>" class="news__card">
-                        <h4><%-article.source.name%></h4>
-                        <img src="<%-article.urlToImage%>" alt="<%-article.author%>">
-                        <h2><%-article.title%></h2>
-                        <p><%-article.description%></p>
+            <%if(countries !== null) { %>
+                <% countries.forEach((country)=> { %>
+                    <a href="country/<%-country.alpha2Code.toLowerCase()%>" class="news__card">
+                        <img src="<%-country.flag%>" alt="<%-country.alpha2Code%>">
+                        <h2><%-country.name%></h2>
                     </a>
                 <%})%>
             <%} else {%>
