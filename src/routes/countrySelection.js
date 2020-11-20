@@ -32,18 +32,18 @@ countrySelectionnewsRouter.get('/:id', async(req, res)=> {
     try {
         const alpha2Code = req.params.id;
         const newsAPI = await axios.get(`https://newsapi.org/v2/top-headlines?country=${alpha2Code}&apiKey=4e5a3ab7b045409dae7e28dfb2d7d942`);
-        res.render('countryNews', { articles : newsAPI.data.articles})
+        res.render('news', { articles : newsAPI.data.articles})
     } catch (error) {
         if(error.response) {
-            res.render('countryNews',{articles:null})
+            res.render('news',{articles:null})
             console.log(error.response.data)
             console.log(error.response.status);
             console.log(error.response.headers);
         }else if(error.request) {
-            res.render('countryNews', { articles : null })
+            res.render('news', { articles : null })
             console.log(error.request)
         } else {
-            res.render('countryNews', { articles : null })
+            res.render('news', { articles : null })
             console.error('Error', error.message)
         }
     }
