@@ -18,9 +18,11 @@ app.use(bodyParser.urlencoded({extended:true}))
 // Routes
 const newsRouter = require('./src/routes/news')
 const countrySelectionnewsRouter = require('./src/routes/countrySelection')
+const categorySelectionnewsRouter = require('./src/routes/categorySelection')
 
 app.use('/', newsRouter);
 app.use('/country',countrySelectionnewsRouter);
+app.use('/category',categorySelectionnewsRouter);
 
 app.listen(port,()=> {
     console.log(`Listening to the port ${port}`);
