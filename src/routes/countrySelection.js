@@ -47,8 +47,6 @@ countrySelectionnewsRouter.get('/:id', async(req, res)=> {
             console.error('Error', error.message)
         }
     }
-    
-    res.render('countryNews',{url})
 })
 
 
