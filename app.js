@@ -23,9 +23,11 @@ const categorySelectionnewsRouter = require('./src/routes/categorySelection')
 const homepageRouter = require('./src/routes/homepage')
 //Homepage Route
 app.use('/',homepageRouter)
+//Category Selection
+app.use('/category',categorySelectionnewsRouter);
 // app.use('/', newsRouter);
 app.use('/country',countrySelectionnewsRouter);
-app.use('/category',categorySelectionnewsRouter);
+
 
 app.listen(port,()=> {
     console.log(`Listening to the port ${port}`);

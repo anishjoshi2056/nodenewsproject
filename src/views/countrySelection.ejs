@@ -19,8 +19,8 @@
     </header>
     <div class="cards-list">
         <%if(countries !== null) {%>
-        <%countries.forEach((country)=>{ %>
-            <a  href="country/<%-country.alpha2Code.toLowerCase()%>" class="news__card">
+        <%countries.Countries.forEach((country)=>{ %>
+            <a  href="<%-countries.category%>/<%-country.alpha2Code.toLowerCase()%>" class="news__card">
                 <div class="card 1">
                     <div class="card_image"> <img src="<%-country.flag%>" alt="<%-country.alpha2Code%>"/></div>
                     <div class="card_title title-white">
