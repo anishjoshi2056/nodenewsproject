@@ -1,15 +1,15 @@
 const express = require('express');
-const categorySelectionnewsRouter = express.Router();
+const newsSelection = express.Router();
 const axios = require('axios');
 
-categorySelectionnewsRouter.get('/',async(req,res)=>{
+newsSelection.get('/',async(req,res)=>{
     let category = 'business entertainment general health science sports technology';
     let cateogoryList = category.split(' ')
     //see the views folder
     res.render('categorySelection',{cateogoryList})
 })
 
-categorySelectionnewsRouter.get('/:id',async(req,res)=> {
+newsSelection.get('/:id',async(req,res)=> {
     try {
         let category = req.params.id;
         const fromWebsite = 'ae ar at au be bg br ca ch cn co cu cz de eg fr gb gr hk hu id ie il in it jp kr lt lv ma mx my ng nl no nz ph pl pt ro rs ru sa se sg si sk th tr tw ua us ve za';
@@ -35,7 +35,7 @@ categorySelectionnewsRouter.get('/:id',async(req,res)=> {
     }
     
 })
-categorySelectionnewsRouter.get('/:id/:country',async(req,res)=> {
+newsSelection.get('/:id/:country',async(req,res)=> {
 try {
     let info = {
         category:req.params.id,
@@ -59,4 +59,4 @@ try {
 }
 })
 
-module.exports = categorySelectionnewsRouter;
+module.exports = newsSelection;
