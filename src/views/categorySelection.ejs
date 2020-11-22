@@ -1,18 +1,27 @@
 <%-include('partials/header')%>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/card.css">
+    <link rel="stylesheet" href="/css/try.css">
 </head>
 <body>
-    <header>
-        <div class="nav">
-            <ul>
-              <li><a href="/" class="nav-link">Top headlines</a></li>
-              <li><a href="/country" class="nav-link">Country</a></li>
-              <li><a href="/category" class="nav-link">Category</a></li>
-            </ul>
+    <%-include('partials/navbar')%>
+    <section class="hero">
+      <div class="background-image"></div>
+      <div class="hero-content-area">
+        <div class="cards-list">
+          <%cateogoryList.forEach((value)=>{ %>
+              <a href="category/<%-value%>">
+                  <div class="card 1">
+                      <div class="card_image"> <img src="https://media.giphy.com/media/10SvWCbt1ytWCc/giphy.gif" /></div>
+                      <div class="card_title title-white">
+                        <p><%-value.toUpperCase()%></p>
+                      </div>
+                    </div>
+              </a>
+          <%})%>
           </div>
-    </header>
-    <div class="cards-list">
+      </div>
+  </section>
+    <!-- <div class="cards-list">
         <%cateogoryList.forEach((value)=>{ %>
             <a href="category/<%-value%>">
                 <div class="card 1">
@@ -23,6 +32,6 @@
                   </div>
             </a>
         <%})%>
-        </div>
+        </div> -->
 </body>
 </html>
